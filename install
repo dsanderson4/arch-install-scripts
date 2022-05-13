@@ -1,0 +1,14 @@
+#!/bin/sh
+timedatectl set-ntp true
+echo -n "Enter EFI partition name: "
+read efipart
+echo -n "Enter system partition name: "
+read systempart
+mount /dev/$systempart /mnt
+mount --mkdir /dev/$efipart /mnt/boot
+pacstrap /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+mkdir /mnt/root/arch-install-scripts
+cp * /mnt/root/arch-install-scripts
+chmod a+x /mnt/root/arch-install-scripts/config
+arch-chroot /mnt /root/arch-install-scripts/config

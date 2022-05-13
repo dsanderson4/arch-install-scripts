@@ -1,0 +1,17 @@
+#!/bin/sh
+cd ~
+git clone https://github.com/dsanderson4/dotfiles.git
+cd dotfiles
+stow emacs i3 kitty vim
+cd scripts/vim
+sh minpac-install.sh
+mkdir ~/.local/share/fonts
+cd ~/.local/share/fonts
+cp ~/dotfiles/fonts/*.ttf .
+fc-cache -f -v
+cd ~/dotfiles/zsh
+. ohmy.sh
+cd ~/.oh-my.zsh
+cp ~/dotfiiles/zsh/all.zsh .
+cd ~
+sed -i 's/robbyrussell/agnoster/' .zshrc

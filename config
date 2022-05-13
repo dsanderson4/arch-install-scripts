@@ -1,0 +1,31 @@
+#!/bin/sh
+ln -sf /usr/share/zoneinfo/US/Mountain /etc/localtime
+hwclock --systohc
+
+sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+echo -n "Enter host name: "
+read host
+echo -e "$host" > /etc/hostname
+pacman -S networkmanager
+systemctl enable NetworkManager.service
+
+pacman -S vim which sudo git openssh
+systemctl enable sshd.service
+
+echo "Set root password:"
+passwd
+
+echo -n "Enter user name: "
+read user
+useradd -m $user
+echo "Set user password:"
+passwd $user
+echo '$user ALL=(ALL:ALL) ALL' | EDITOR='tee -a' visudo
+
+pacman -S grub efibootmgr os-prober
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
+sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
