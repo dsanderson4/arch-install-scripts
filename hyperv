@@ -1,0 +1,10 @@
+#!/bin/sh
+sudo pacman -S hyperv
+sudo systemctl enable hv_fcopy_daemon.service
+sudo systemctl enable hv_kvp_daemon.service
+sudo systemctl enable hv_vss_daemon.service
+cd ~
+git clone https://github.com/Microsoft/linux-vm-tools
+cd linux-vm-tools/arch
+./makepkg.sh
+sudo ./install-config.sh
