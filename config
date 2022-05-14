@@ -12,12 +12,20 @@ echo -e "$host" > /etc/hostname
 pacman -S networkmanager
 systemctl enable NetworkManager.service
 
-pacman -S vim which sudo git openssh
+pacman -S vim which
+
+pacman -S openssh
 systemctl enable sshd.service
+
+pacman -S git github-cli
+git config --global user.email "dsanderson4@gmail.com"
+git config --global user.name "David Anderson"
+git config --global core.editor "vim"
 
 echo "Set root password:"
 passwd
 
+pacman -S sudo
 echo -n "Enter user name: "
 read user
 useradd -m $user
