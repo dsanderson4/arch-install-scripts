@@ -3,4 +3,4 @@ read -p "Enter device name: " device
 sgdisk -n 0:0:+1GiB -t 0:ef00 -c 0:boot /dev/$device
 fdisk -l
 read -p "Enter partition number: " partnum
-mkfs.fat -F 32 /$device$partnum
+mkfs.fat -F 32 /dev/$device$partnum
