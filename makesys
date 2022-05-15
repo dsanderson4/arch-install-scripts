@@ -1,0 +1,6 @@
+#!/bin/sh
+read -p "Enter device device name: " device
+sgdisk -n 0:0:0 -t 0:8300 -c 0:root /dev/$device
+fdisk -l
+read -p "Enter partition number: " partnum
+mkfs.ext4 /$device$partnum

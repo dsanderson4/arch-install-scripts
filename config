@@ -6,32 +6,25 @@ sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
-echo -n "Enter host name: "
-read host
+read -p "Enter host name: " host
 echo -e "$host" > /etc/hostname
 pacman -S networkmanager
 systemctl enable NetworkManager.service
 
-pacman -S vim which
+pacman -S vim which git
 
 pacman -S openssh
 systemctl enable sshd.service
-
-pacman -S git github-cli
-git config --global user.email "dsanderson4@gmail.com"
-git config --global user.name "David Anderson"
-git config --global core.editor "vim"
 
 echo "Set root password:"
 passwd
 
 pacman -S sudo
-echo -n "Enter user name: "
-read user
+read -p "Enter user name: " user
 useradd -m $user
 echo "Set user password:"
 passwd $user
-echo '$user ALL=(ALL:ALL) ALL' | EDITOR='tee -a' visudo
+echo "$user ALL=(ALL:ALL) ALL" | EDITOR='tee -a' visudo
 
 pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch

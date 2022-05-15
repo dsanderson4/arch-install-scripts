@@ -1,9 +1,7 @@
 #!/bin/sh
 timedatectl set-ntp true
-echo -n "Enter EFI partition name: "
-read efipart
-echo -n "Enter system partition name: "
-read systempart
+read -p "Enter EFI partition name: " efipart
+read -p "Enter system partition name: " systempart
 mount /dev/$systempart /mnt
 mount --mkdir /dev/$efipart /mnt/boot
 pacstrap /mnt base linux linux-firmware

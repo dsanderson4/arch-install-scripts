@@ -1,0 +1,5 @@
+#!/bin/sh
+curl -O -L https://raw.githubusercontent.com/dsanderson4/arch-install-scripts/main/install
+curl -O -L https://raw.githubusercontent.com/dsanderson4/arch-install-scripts/main/config
+curl -O -L https://raw.githubusercontent.com/dsanderson4/arch-install-scripts/main/makeefi
+curl -O -L https://raw.githubusercontent.com/dsanderson4/arch-install-scripts/main/makesys
