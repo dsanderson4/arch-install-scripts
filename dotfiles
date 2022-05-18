@@ -5,7 +5,7 @@ cd dotfiles
 stow emacs i3 kitty vim
 cd scripts/vim
 sh minpac-install.sh
-mkdir ~/.local/share/fonts
+mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts
 cp ~/dotfiles/fonts/*.ttf .
 fc-cache -f -v
