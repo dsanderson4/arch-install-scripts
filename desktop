@@ -13,7 +13,6 @@ cd aur
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -sri
-#sudo pacman -U yay.tar.xz
 
-sudo pacman -S gnome gdm i3 dmenu i3status rofi kitty zsh emacs stow man
+yay -S gnome gdm i3 dmenu i3status rofi kitty zsh emacs stow man vivaldi rate-mirrors-bin
 sudo systemctl enable gdm.service

@@ -13,5 +13,6 @@ cd ~/dotfiles/zsh
 source ./ohmy.sh
 cd ~/.oh-my-zsh/custom
 cp ~/dotfiles/zsh/all.zsh .
+cp ~/arch-install-scripts/rate-mirrors.zsh .
 cd ~
 sed -i 's/robbyrussell/agnoster/' .zshrc
