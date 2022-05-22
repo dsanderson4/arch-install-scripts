@@ -1,0 +1,3 @@
+#!/bin/sh
+yay -S xrdp xorgxrdp
+sudo systemctl enable xrdp.service

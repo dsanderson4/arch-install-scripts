@@ -4,6 +4,7 @@ sudo systemctl enable hv_fcopy_daemon.service
 sudo systemctl enable hv_kvp_daemon.service
 sudo systemctl enable hv_vss_daemon.service
 cd ~
+sed -i 's/twm &/exec i3/' .xinitrc
 mkdir -p github/Microsoft
 cd github/Microsoft
 git clone https://github.com/Microsoft/linux-vm-tools

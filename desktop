@@ -14,5 +14,10 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -sri
 
+cd ~
+mkdir -p github/vinceliuice/grub2-themes
+cd github/vinceliuice
+git clone https://github.com/vinceliuice/grub2-themes.git
+
 yay -S gnome gdm i3 dmenu i3status rofi kitty zsh emacs stow man vivaldi rate-mirrors-bin
 sudo systemctl enable gdm.service

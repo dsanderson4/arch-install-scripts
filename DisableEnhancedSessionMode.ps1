@@ -1,1 +1,1 @@
-Set-VM -VMName $args[0] -EnhancedSessionTransportType VMBus
+sudo Set-VM -VMName $args[0] -EnhancedSessionTransportType VMBus
