@@ -1,0 +1,25 @@
+#!/usr/bin/sh
+# q	
+# qa2ps
+
+yay -S avahi nss-mdns
+# Enable avahi hostname resolution?
+
+#bluez-cups
+
+yay -S cups cups-filters cups-pdf cups-pk-helper
+yay -S foomatic-db foomatic-db-engine foomatic-db-gutenprint-ppds foomatic-db-nonfree foomatic-db-nonfree-ppds foomatic-db-ppds
+yay -S ghostscript gsfonts gutenprint
+
+# hplip
+# noto-color-emoji-fontconfig
+# python-pyqt5
+# python-pysmbc
+# python-reportlab
+# samba
+# splix
+yay -S system-config-printer
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
+sudo systemctl enable avahi-daemon.service
+sudo systemctl start avahi-daemon.service
