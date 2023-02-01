@@ -4,6 +4,7 @@ read -p "Enter EFI partition name: " efipart
 read -p "Enter system partition name: " systempart
 mount /dev/$systempart /mnt
 mount --mkdir /dev/$efipart /mnt/boot
+pacman -Sy archlinux-keyring
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root/arch-install-scripts
