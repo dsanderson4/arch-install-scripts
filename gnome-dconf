@@ -1,0 +1,26 @@
+#!/bin/sh
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces "10"
+
+dconf write /org/gnome/settings-daemon/plugins/media-keys/search "['<Control>Escape']"
+
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Control><Alt>1']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-2 "['<Control><Alt>2']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-3 "['<Control><Alt>3']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-4 "['<Control><Alt>4']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Control><Alt>5']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-6 "['<Control><Alt>6']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-7 "['<Control><Alt>7']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-8 "['<Control><Alt>8']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-9 "['<Control><Alt>9']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-10 "['<Control><Alt>0']"
+
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Control><Super>1']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Control><Super>2']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Control><Super>3']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Control><Super>4']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Control><Super>5']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-6 "['<Control><Super>6']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-7 "['<Control><Super>7']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-8 "['<Control><Super>8']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Control><Super>9']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Control><Super>0']"

@@ -15,9 +15,12 @@ cd yay
 makepkg -sri
 
 cd ~
+mkdir bin
+mkdir rclone
 mkdir -p github/vinceliuice/grub2-themes
 cd github/vinceliuice
 git clone https://github.com/vinceliuice/grub2-themes.git
 
-yay -S gnome gdm i3 dmenu i3status rofi kitty zsh emacs stow man vivaldi rate-mirrors-bin
+yay -S gnome gdm i3 dmenu i3status rofi
+yay -S kitty zsh emacs neovim neovim-qt stow man vivaldi rate-mirrors-bin rclone
 sudo systemctl enable gdm.service

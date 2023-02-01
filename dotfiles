@@ -2,7 +2,7 @@
 cd ~
 git clone https://github.com/dsanderson4/dotfiles.git
 cd dotfiles
-stow emacs i3 kitty vim
+stow emacs i3 kitty vim neovim
 cd scripts/vim
 sh minpac-install.sh
 mkdir -p ~/.local/share/fonts
@@ -14,5 +14,6 @@ source ./ohmy.sh
 cd ~/.oh-my-zsh/custom
 cp ~/dotfiles/zsh/all.zsh .
 cp ~/arch-install-scripts/rate-mirrors.zsh .
+cp ~/arch-install-scripts/rclone.zsh .
 cd ~
 sed -i 's/robbyrussell/agnoster/' .zshrc

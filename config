@@ -25,6 +25,7 @@ useradd -m $user
 echo "Set user password:"
 passwd $user
 echo "$user ALL=(ALL:ALL) ALL" | EDITOR='tee -a' visudo
+usermod -a -G wheel $user
 
 pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
