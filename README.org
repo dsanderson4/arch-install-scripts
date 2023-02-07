@@ -1,0 +1,76 @@
+#+OPTIONS: toc:nil html-postamble:nil num:nil
+
+* Arch Linux Installation Scripts
+
+These scripts for installing Arch Linux are tailored to my preferences.
+
+* download
+
+This script bootstraps the installation by downloading the four scripts used in
+the first phase of installation: makeefi, makesys, install, and config. After
+first booting with the Arch installation disk, enter the following commands:
+
+- mkdir arch-install-scripts
+
+- cd arch-install-scripts
+
+- curl -O -L https://raw.githubusercontent.com/dsanderson4/arch-install-scripts/main/download
+
+- sh download
+
+* makeefi
+
+Run this script to create an EFI partition. Enter the device name for the disk
+when prompted. Enter the number of the newly created partition when prompted,
+based on the 'fdisk -l' output from the script.
+
+* makesys
+
+Run this script to create a system partition. Enter the device name for the disk
+when prompted. Enter the number of the newly created partition when prompted,
+based on the 'fdisk -l' output from the script.
+
+* install, config
+
+Run the 'install' script to make a bootable system. This script runs the
+'config' script using arch-chroot.
+
+Respond to the prompts for the EFI and system partition names, plus the host
+name, root password, user name and user password. When the script is finished,
+reboot and log in as the user. Then clone this repository into
+~/arch-install-scripts and continue.
+
+* xorg
+
+If additional video drivers are needed, install them and run this script. After
+running, it should be possible to 'xinit' into an X environment with xterm.
+
+* desktop
+
+This script installs Gnome, i3, and some essential applications. Run it,
+answering prompts, and reboot. At the GDM login screen log in to either Gnome or
+i3.
+
+* dotfiles
+
+This script uses my 'dotfiles' github repository to configure various things to
+my liking.
+
+* printing
+
+This script installs printing support. My Brother MFC-J6535DW printer supports
+ipp everywhere, but doesn't play nicely with system-config-printer. The CUPS web
+interface works for me.
+
+* xrdp
+
+This script installs packages to allow xrdp-ing into the system.
+
+* hyperv
+
+Run this script in an Arch Hyper-V VM, to support xrdp-ing into the system.
+
+* gnome-dconf
+
+Run this script after installing the gTile extension, for various Gnome
+shortcuts.
